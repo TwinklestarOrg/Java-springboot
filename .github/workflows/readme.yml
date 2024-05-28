@@ -1,0 +1,28 @@
+name: Update README
+
+on:
+  push:
+    paths:
+      - 'config.yaml'
+
+jobs:
+  update-readme:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Run script to generate README
+        run: bash generate.sh
+
+      - name: Commit changes
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add README.md
+          git commit -m "Update README with latest configurations"
+      
+      - name: Push changes
+        uses: ad-m/github-push-action@v0.6
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}

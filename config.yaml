@@ -1,0 +1,7 @@
+dependencies:
+  - Spring Boot
+  - Other dependencies...
+env_variables:
+  - ENV_VAR_1: value1
+  - ENV_VAR_2: value2
+# Other configurations...
