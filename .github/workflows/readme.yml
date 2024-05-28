@@ -2,9 +2,6 @@ name: Update README
 
 on:
   pull_request_target:
-    paths:
-      - 'config.yaml'
-
 jobs:
   update-readme:
     runs-on: ubuntu-latest
