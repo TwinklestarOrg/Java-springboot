@@ -1,7 +1,7 @@
 name: Update README
 
 on:
-  pull_request:
+  pull_request_target:
     paths:
       - 'config.yaml'
 
